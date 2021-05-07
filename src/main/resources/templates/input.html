@@ -1,0 +1,18 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+
+</head>
+<body>
+    <h1>Input Tasks</h1>
+    <form th:action="@{/tasks}" th:object="${task}" method="post" action="#">
+        <p> Task Title <input type="text" th:field="*{title}"/> </p>
+        <p>Task Description <input type="text" th:field="*{description}"/></p>
+        <select>
+            <option th:each="type : ${types}" th:text="${type}"></option>
+        </select>
+
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+</body>
+
+</html>
